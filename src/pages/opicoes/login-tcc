@@ -1,0 +1,107 @@
+import React, {useState} from 'react';
+import { Text, View, StyleSheet, Button, TextInput, Image } from 'react-native';
+
+
+export default function App() {
+
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+
+  return (
+    <View style={styles.container}>
+    
+    <View style={styles.top}>
+    <section>
+      <Image style={styles.image}source={require('./assets/psycho-help.png')}/>
+      <Text style={styles.text}>PSYCHO HELP
+          </Text>
+        
+        </section>
+        </View>
+        <View style={styles.resto}>
+      <section>
+        
+        <form>
+          <input style={styles.texto}
+            type="email"
+            required
+            placeholder="Seu e-mail"
+            id="email"
+            onChange={event => setEmail(event.target.value)}
+            
+          />
+          <input style={styles.texto}
+            type="password"
+            required
+            placeholder="Sua senha"
+            id="password"
+            onChange={event => setPassword(event.target.value)}
+          />
+          <div>
+            <Button style={styles.button}
+title="entrar"
+color="#A13CFE"
+/>
+          </div>
+        </form>
+      </section>
+      </View>
+      
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    textAlign:"center",
+    //paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+  },
+  
+  top: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  image:{
+    justifyContent: 'center',
+    width: 100,
+    height: 100,
+    left: 80,
+    top: 1,
+  },
+  text: {
+    //width:"80%",
+    //height:"100%",
+    padding: 10,
+    
+    textAlign:"center",
+    alignItems:"center",
+    //display:'flex',
+    color:"#39076A",
+    fontSize:18,
+    fontStyle:"Roboto",
+    fontWeight: "bold"
+  },
+  resto:{
+    
+    padding:17,
+    textAlign:"center",
+    marginTop:"10px",
+  },
+  button:{
+    flex: 1,
+justifyContent: 'center',
+alignItems: 'center',
+backgroundColor: '#F5FCFF',
+padding: 10,
+marginTop: 10,
+
+  },
+
+  
+});
